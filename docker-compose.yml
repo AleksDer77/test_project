@@ -8,7 +8,6 @@ services:
       - ./:/var/www/html
     networks:
       - app-network
-    user: www-data
 
   nginx-back:
     image: nginx:alpine

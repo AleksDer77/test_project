@@ -15,7 +15,8 @@ key:
 
 cr-db:
 	@docker exec -it -u root php-fpm touch database/database.sqlite
-	@docker exec -it -u root php-fpm chmod -R 777 storage/
+	@docker exec -it -u root php-fpm chmod -R 777 database/
+	@docker exec -it -u root php-fpm chmod -R 666 database/database.sqlite
 
 storage:
 	@docker exec -it -u root php-fpm chmod -R 777 storage/logs/
