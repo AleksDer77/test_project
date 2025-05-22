@@ -18,10 +18,10 @@ cr-db:
 	@docker exec -it -u root php-fpm chmod -R 777 database/
 	@docker exec -it -u root php-fpm chmod -R 666 database/database.sqlite
 
-storage:
-	@docker exec -it -u root php-fpm chmod -R 777 storage/logs/
+stor:
+	@docker exec -it -u root php-fpm chmod -R 777 storage/
 
 migrate:
-	@docker exec -it -u root php-fpm php artisan:migrate
+	@docker exec -it -u root php-fpm php artisan migrate
 
-init: c-i cp key cr-db storage migrate
+init: c-i cp key cr-db stor migrate
