@@ -5,21 +5,22 @@ down:
 	@docker-compose down
 
 c-i:
-	@docker exec -i php-fpm copmoser install
+	@docker exec -it -u root php-fpm composer install
 
 cp:
-	@docker exec -i php-fpm cp .env.example .env
+	@docker exec -it -u root php-fpm cp .env.example .env
 
 key:
-	@docker exec -i php-fpm php artisan key:generate
+	@docker exec -it -u root php-fpm php artisan key:generate
 
 cr-db:
-	@docker exec -i php-fpm touch database/database.sqlite && chmod -R 777 database/
+	@docker exec -it -u root php-fpm touch database/database.sqlite
+	@docker exec -it -u root php-fpm chmod -R 777 storage/
 
 storage:
-	@docker exec -i php-fpm chmod -R 777 storage/logs/
+	@docker exec -it -u root php-fpm chmod -R 777 storage/logs/
 
 migrate:
-	@docker exec -i php-fpm php artisan:migrate
+	@docker exec -it -u root php-fpm php artisan:migrate
 
-init: up c-i cp key cr-db storage migrate
+init: c-i cp key cr-db storage migrate
