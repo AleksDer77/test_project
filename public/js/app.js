@@ -10,7 +10,7 @@ const stockItems = document.getElementById('stockItems');
 
 const addItemModal = new bootstrap.Modal(document.getElementById('addItemModal'));
 
-const API_URL = 'http://localhost:8000/api/products';
+const API_URL = 'http://localhost:8080/api/products';
 
 document.addEventListener('DOMContentLoaded', () => {
     setDateTimeToNow();
