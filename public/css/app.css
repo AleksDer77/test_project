@@ -1,0 +1,44 @@
+.stock-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.add-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+}
+
+.add-btn:hover {
+    background-color: #d32f2f;
+}
+
+.close-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+.error-message {
+    color: #f44336;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.table-responsive {
+    margin-bottom: 20px;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.form-control.is-invalid {
+    border-color: #f44336;
+    background-image: none;
+}
